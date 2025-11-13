@@ -42,6 +42,16 @@ buttons.forEach(function(button) {
             return;
         }
 
+        //Handling Division Operator
+        if(button.id === "divide") {
+            if(currentInput !== "") {
+                previousInput = parseFloat(currentInput);
+                currentOperator = "/";
+                currentInput = "";
+            }
+            return;
+        }
+
         //Re-handling Equals button
         if(button.id === "equals") {
             if(currentOperator && previousInput !== null && currentInput !== "") {
@@ -53,6 +63,15 @@ buttons.forEach(function(button) {
                     result = previousInput - parseFloat(currentInput);
                 } else if(currentOperator === "*") {
                     result = previousInput * parseFloat(currentInput);
+                } else if(currentOperator === "/") {
+                    if(parseFloat(currentInput) === 0) {
+                        screen.textContent = "Error: Div by 0";
+                        currentInput = "";
+                        previousInput = null;
+                        currentOperator = null;
+                        return;
+                    }
+                    result = previousInput / parseFloat(currentInput);
                 }
 
                 screen.textContent = result;
