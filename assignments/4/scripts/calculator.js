@@ -24,6 +24,18 @@ buttons.forEach(function(button) {
             return;
         }
 
+        //Handling Plus/Minus button
+        if(button.id === "plus-minus") {
+            if(currentInput){
+                let number = parseFloat(currentInput);
+                if(!isNaN(number)) {
+                    number = number * -1;
+                    currentInput = number.toString();
+                    screen.textContent = currentInput;
+                }
+            }
+            return;
+        }
         currentInput += value;
         screen.textContent = currentInput;
     });
