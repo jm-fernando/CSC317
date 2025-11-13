@@ -10,6 +10,13 @@ buttons.forEach(function(button) {
     button.addEventListener("click", function() {
         const value = button.textContent;
 
+        //Handling Clear button
+        if(button.id === "clear") {
+            currentInput = "";
+            screen.textContent = 0;
+            return;
+        }
+
         currentInput += value;
         screen.textContent = currentInput;
     });
