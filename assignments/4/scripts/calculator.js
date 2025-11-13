@@ -52,6 +52,19 @@ buttons.forEach(function(button) {
             return;
         }
 
+        //Handling Decimals
+        if(button.id === "decimal") {
+            if(!currentInput.includes(".")) {
+                if(currentInput === "") {
+                    currentInput = "0.";
+                } else {
+                    currentInput += ".";
+                }
+                screen.textContent = currentInput;
+            }
+            return;
+        }
+
         //Re-handling Equals button
         if(button.id === "equals") {
             if(currentOperator && previousInput !== null && currentInput !== "") {
