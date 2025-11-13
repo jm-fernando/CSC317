@@ -32,20 +32,6 @@ buttons.forEach(function(button) {
             return;
         }
 
-        //Handling Equals button
-        /*
-        if(button.id === "equals") {
-            if(currentOperator === "+" && previousInput !== null && currentInput !== "") {
-                let result = previousInput + parseFloat(currentInput);
-                screen.textContent = result;
-                currentInput = result.toString();
-                previousInput = null;
-                currentOperator = null;
-            }
-            return;
-        }
-        */
-
         //Re-handling Equals button
         if(button.id === "equals") {
             if(currentOperator && previousInput !== null && currentInput !== "") {
