@@ -32,6 +32,16 @@ buttons.forEach(function(button) {
             return;
         }
 
+        //Handling Multiplication Operator
+        if(button.id === "multiply") {
+            if(currentInput !== "") {
+                previousInput = parseFloat(currentInput);
+                currentOperator = "*";
+                currentInput = "";
+            }
+            return;
+        }
+
         //Re-handling Equals button
         if(button.id === "equals") {
             if(currentOperator && previousInput !== null && currentInput !== "") {
@@ -41,6 +51,8 @@ buttons.forEach(function(button) {
                     result = previousInput + parseFloat(currentInput);
                 } else if(currentOperator === "-") {
                     result = previousInput - parseFloat(currentInput);
+                } else if(currentOperator === "*") {
+                    result = previousInput * parseFloat(currentInput);
                 }
 
                 screen.textContent = result;
