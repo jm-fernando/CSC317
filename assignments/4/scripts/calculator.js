@@ -17,6 +17,13 @@ buttons.forEach(function(button) {
             return;
         }
 
+        //Handling Delete button
+        if(button.id === "backspace") {
+            currentInput = currentInput.slice(0, -1);
+            screen.textContent = currentInput || 0;
+            return;
+        }
+
         currentInput += value;
         screen.textContent = currentInput;
     });
