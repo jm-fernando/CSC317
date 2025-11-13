@@ -22,7 +22,18 @@ buttons.forEach(function(button) {
             return;
         }
 
+        //Handling Subtraction Operator
+        if(button.id === "subtract") {
+            if(currentInput !== "") {
+                previousInput = parseFloat(currentInput);
+                currentOperator = "-";
+                currentInput = "";
+            }
+            return;
+        }
+
         //Handling Equals button
+        /*
         if(button.id === "equals") {
             if(currentOperator === "+" && previousInput !== null && currentInput !== "") {
                 let result = previousInput + parseFloat(currentInput);
@@ -32,6 +43,25 @@ buttons.forEach(function(button) {
                 currentOperator = null;
             }
             return;
+        }
+        */
+
+        //Re-handling Equals button
+        if(button.id === "equals") {
+            if(currentOperator && previousInput !== null && currentInput !== "") {
+                let result;
+
+                if(currentOperator === "+") {
+                    result = previousInput + parseFloat(currentInput);
+                } else if(currentOperator === "-") {
+                    result = previousInput - parseFloat(currentInput);
+                }
+
+                screen.textContent = result;
+                currentInput = result.toString();
+                previousInput = null;
+                currentOperator = null;
+            }
         }
 
 
