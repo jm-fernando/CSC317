@@ -92,6 +92,7 @@ buttons.forEach(function(button) {
                 previousInput = null;
                 currentOperator = null;
             }
+            return;
         }
 
 
