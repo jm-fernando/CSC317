@@ -17,8 +17,8 @@ This was solved by organizing logic blocks for each operator and using `parseFlo
 Another challenge was adding keyboard support, which required mapping keypress events to existing button functions while preventing unwanted input overlap.
 
 ## Resources Utilized
-- **W3 Schools - parseFloat()** [https://www.w3schools.com/jsref/jsref_parsefloat.asp](https://www.w3schools.com/jsref/jsref_parsefloat.asp)
+- **W3 Schools - parseFloat()** [https://www.w3schools.com/jsref/jsref_parsefloat.asp]
 
-- **MDN Web Docs - Element: keypress event** [https://developer.mozilla.org/en-US/docs/Web/API/Element/keypress_event] (https://developer.mozilla.org/en-US/docs/Web/API/Element/keypress_event)
+- **MDN Web Docs - Element: keypress event** [https://developer.mozilla.org/en-US/docs/Web/API/Element/keypress_event]
 
-- **Coding2GO - Learn JavaScript EventListeners in 4 Minutes** [https://www.youtube.com/watch?v=i_8NQuEAOmg] (https://www.youtube.com/watch?v=i_8NQuEAOmg)
+- **Coding2GO - Learn JavaScript EventListeners in 4 Minutes** [https://www.youtube.com/watch?v=i_8NQuEAOmg]
