@@ -95,7 +95,6 @@ buttons.forEach(function(button) {
             return;
         }
 
-
         //Handling Clear button
         if(button.id === "clear") {
             currentInput = "";
@@ -125,4 +124,87 @@ buttons.forEach(function(button) {
         currentInput += value;
         screen.textContent = currentInput;
     });
+});
+
+//Handling Keyboard Input
+document.addEventListener("keydown", function(event) {
+    const key = event.key;
+
+    //Number keys
+    if(!isNaN(key)){
+        currentInput += key;
+        screen.textContent = currentInput;
+    }
+
+    //Decimal key
+    if(key === ".") {
+        if(!currentInput.includes(".")) {
+            if(currentInput === "") {
+                currentInput = "0.";
+            } else {
+                currentInput += ".";
+            }
+            screen.textContent = currentInput;
+        }
+    }
+
+    //Operator keys
+    if(key === "+"){
+        previousInput = parseFloat(currentInput);
+        currentOperator = "+";
+        currentInput = "";
+    }
+
+    if(key === "-"){
+        previousInput = parseFloat(currentInput);
+        currentOperator = "-";
+        currentInput = "";
+    }
+
+    if(key === "*"){
+        previousInput = parseFloat(currentInput);
+        currentOperator = "*";
+        currentInput = "";
+    }
+
+    if(key === "/"){
+        previousInput = parseFloat(currentInput);
+        currentOperator = "/";
+        currentInput = "";
+    }
+
+    //Equals key
+    if(key === "=" || key === "Enter") {
+        if(currentOperator && previousInput !== null && currentInput !== "") {
+            let result;
+
+            if(currentOperator === "+") {
+                result = previousInput + parseFloat(currentInput);
+            } else if(currentOperator === "-") {
+                result = previousInput - parseFloat(currentInput);
+            } else if(currentOperator === "*") {
+                result = previousInput * parseFloat(currentInput);
+            } else if(currentOperator === "/") {
+                if(parseFloat(currentInput) === 0) {
+                    screen.textContent = "Error: Div by 0";
+                    currentInput = "";
+                    previousInput = null;
+                    currentOperator = null;
+                    return;
+                }
+                result = previousInput / parseFloat(currentInput);
+            }
+
+            screen.textContent = result;
+            currentInput = result.toString();
+            previousInput = null;
+            currentOperator = null;
+        }
+    }
+
+    //Backspace key
+    if(key === "Backspace") {
+        currentInput = currentInput.slice(0, -1);
+        screen.textContent = currentInput || 0;
+    }
 });
