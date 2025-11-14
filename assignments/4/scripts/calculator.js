@@ -123,6 +123,17 @@ buttons.forEach(function(button) {
         }
         currentInput += value;
         screen.textContent = currentInput;
+
+        //Handling Percent button
+        if(button.id === "percent") {
+            if(currentInput !== "") {
+                let number = parseFloat(currentInput);
+                number = number / 100;
+                currentInput = number.toString();
+                screen.textContent = currentInput;
+            }
+            return;
+        }
     });
 });
 
