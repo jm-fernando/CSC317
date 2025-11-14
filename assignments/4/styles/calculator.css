@@ -1,6 +1,9 @@
 body{
     font-family: Arial, sans-serif;
-    margin: 20px;
+    margin: 0;
+    padding: 0;
+    background-color: #5E0B15;
+    color: #D9CAB3;
 }
 
 .calculator-container{
@@ -10,7 +13,8 @@ body{
 }
 
 .calculator{
-    border: 1px solid #000;
+    background-color: #4A5043;
+    border: 1px solid #D9CAB3;
     padding: 20px;
     width: 220px;
 }
@@ -18,6 +22,8 @@ body{
 .calc-screen{
     width: 100%;
     height: 40px;
+    background-color: #2E2E2E;
+    color: #D9CAB3;
     border: 1px solid #000;
     text-align: right;
     margin-bottom: 10px;
@@ -35,4 +41,21 @@ button{
     height: 40px;
     font-size: 16px;
     cursor: pointer;
+    color: #D9CAB3;
+}
+
+.calc-number{
+    background-color: #4A5043;
+}
+
+.calc-operator{
+    background-color: #BC8034;
+}
+
+.calc-util{
+    background-color: #8C7A6B;
+}
+
+.calc-equal{
+    background-color: #BC8034;
 }
