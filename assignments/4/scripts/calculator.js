@@ -207,4 +207,12 @@ document.addEventListener("keydown", function(event) {
         currentInput = currentInput.slice(0, -1);
         screen.textContent = currentInput || 0;
     }
+
+    //Clear key
+    if(key === "Escape") {
+        currentInput = "";
+        previousInput = null;
+        currentOperator = null;
+        screen.textContent = 0;
+    }
 });
