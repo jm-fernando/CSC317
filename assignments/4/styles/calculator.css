@@ -59,3 +59,7 @@ button{
 .calc-equal{
     background-color: #BC8034;
 }
+
+button:hover{
+    opacity: 0.8;
+}
